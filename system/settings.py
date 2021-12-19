@@ -37,8 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', 
+    'allauth', 
+    'allauth.account', 
+    'allauth.socialaccount', 
     'accounts',
+    'crispy_forms',
 ]
+SITE_ID = 1 # < here
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBac\kend' # < here
+LOGIN_REDIRECT_URL = '/' # < here
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -122,6 +131,15 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL='home'
 LOGOUT_REDIRECT_URL='login'
+
+
+#DataFlair
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'emmanueltokula4@gmail.com'
+EMAIL_HOST_PASSWORD ='Tokula1234'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
